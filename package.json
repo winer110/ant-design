@@ -80,7 +80,7 @@
     "rc-tree-select": "~1.12.0",
     "rc-upload": "~2.4.0",
     "rc-util": "^4.0.4",
-    "react-antd-icons": "^0.0.1-alpha.3",
+    "react-antd-icons": "^0.0.1-alpha.4",
     "react-lazy-load": "^3.0.12",
     "react-slick": "~0.23.1",
     "shallowequal": "^1.0.1",
