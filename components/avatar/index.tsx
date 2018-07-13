@@ -16,6 +16,9 @@ export interface AvatarProps {
   prefixCls?: string;
   className?: string;
   children?: any;
+  /* callback when img load error */
+  /* return true to prevent Avatar show default fallback behavior, then you can do fallback by your self*/
+  onError?: () => boolean;
 }
 
 export interface AvatarState {
@@ -71,7 +74,13 @@ export default class Avatar extends React.Component<AvatarProps, AvatarState> {
     }
   }
 
-  handleImgLoadError = () => this.setState({ isImgExist: false });
+  handleImgLoadError = () => {
+    const { onError } = this.props;
+    const preventFallback =  onError && onError();
+    if (!preventFallback) {
+      this.setState({ isImgExist: false });
+    }
+  }
 
   render() {
     const {
